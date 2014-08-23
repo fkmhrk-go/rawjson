@@ -3,6 +3,7 @@ package rawjson
 import (
 	"encoding/json"
 	"errors"
+	"io"
 	"strings"
 )
 
@@ -57,7 +58,10 @@ func (j RawJsonArray) Array(i int) (RawJsonArray, error) {
 }
 
 func ArrayFromString(v string) (RawJsonArray, error) {
-	r := strings.NewReader(v)
+	return ArrayFromReader(strings.NewReader(v))
+}
+
+func ArrayFromReader(r io.Reader) (RawJsonArray, error) {
 	doc := json.NewDecoder(r)
 	var obj []interface{}
 	err := doc.Decode(&obj)

@@ -1,13 +1,12 @@
 package rawjson
 
 import (
-	"./"
 	"testing"
 )
 
-func Test_1000_int(t *testing.T) {
+func TestArray_1000_int(t *testing.T) {
 	val := "[123, 456]"
-	r, err := rawjson.ArrayFromString(val)
+	r, err := ArrayFromString(val)
 	if err != nil {
 		t.Errorf("Failed to create Json : %s", err)
 	}
@@ -20,9 +19,9 @@ func Test_1000_int(t *testing.T) {
 	}
 }
 
-func Test_1200_float(t *testing.T) {
+func TestArray_1200_float(t *testing.T) {
 	val := "[123.75, 456.78]"
-	r, err := rawjson.ArrayFromString(val)
+	r, err := ArrayFromString(val)
 	if err != nil {
 		t.Errorf("Failed to create Json : %s", err)
 	}
@@ -35,9 +34,9 @@ func Test_1200_float(t *testing.T) {
 	}
 }
 
-func Test_1300_string(t *testing.T) {
+func TestArray_1300_string(t *testing.T) {
 	val := "[\"fkm\",\"moke\"]"
-	r, err := rawjson.ArrayFromString(val)
+	r, err := ArrayFromString(val)
 	if err != nil {
 		t.Errorf("Failed to create Json : %s", err)
 	}
@@ -50,9 +49,9 @@ func Test_1300_string(t *testing.T) {
 	}
 }
 
-func Test_1400_bool(t *testing.T) {
+func TestArray_1400_bool(t *testing.T) {
 	val := "[\"fkm\", true]"
-	r, err := rawjson.ArrayFromString(val)
+	r, err := ArrayFromString(val)
 	if err != nil {
 		t.Errorf("Failed to create Json : %s", err)
 	}
@@ -65,9 +64,9 @@ func Test_1400_bool(t *testing.T) {
 	}
 }
 
-func Test_1600_object(t *testing.T) {
+func TestArray_1600_object(t *testing.T) {
 	val := "[\"fkm\",{\"name\":\"moke\"}]"
-	r, err := rawjson.ArrayFromString(val)
+	r, err := ArrayFromString(val)
 	if err != nil {
 		t.Errorf("Failed to create Json : %s", err)
 	}
@@ -81,9 +80,9 @@ func Test_1600_object(t *testing.T) {
 	}
 }
 
-func Test_1700_array(t *testing.T) {
+func TestArray_1700_array(t *testing.T) {
 	val := "[\"fkm\",[\"moke\"]]"
-	r, err := rawjson.ArrayFromString(val)
+	r, err := ArrayFromString(val)
 	if err != nil {
 		t.Errorf("Failed to create Json : %s", err)
 	}
