@@ -1,13 +1,12 @@
 package rawjson
 
 import (
-	"./"
 	"testing"
 )
 
-func Test_0000_int(t *testing.T) {
+func TestObject_0000_int(t *testing.T) {
 	val := "{\"name\":\"fkm\",\"score\":100}"
-	r, err := rawjson.ObjectFromString(val)
+	r, err := ObjectFromString(val)
 	if err != nil {
 		t.Errorf("Failed to create Json : %s", err)
 	}
@@ -20,9 +19,9 @@ func Test_0000_int(t *testing.T) {
 	}
 }
 
-func Test_0100_float(t *testing.T) {
+func TestObject_0100_float(t *testing.T) {
 	val := "{\"name\":\"fkm\",\"rate\":4.56}"
-	r, err := rawjson.ObjectFromString(val)
+	r, err := ObjectFromString(val)
 	if err != nil {
 		t.Errorf("Failed to create Json : %s", err)
 	}
@@ -35,9 +34,9 @@ func Test_0100_float(t *testing.T) {
 	}
 }
 
-func Test_0200_string(t *testing.T) {
+func TestObject_0200_string(t *testing.T) {
 	val := "{\"name\":\"fkm\",\"rate\":4.56}"
-	r, err := rawjson.ObjectFromString(val)
+	r, err := ObjectFromString(val)
 	if err != nil {
 		t.Errorf("Failed to create Json : %s", err)
 	}
@@ -50,9 +49,9 @@ func Test_0200_string(t *testing.T) {
 	}
 }
 
-func Test_0300_bool(t *testing.T) {
+func TestObject_0300_bool(t *testing.T) {
 	val := "{\"name\":\"fkm\",\"enabled\":true}"
-	r, err := rawjson.ObjectFromString(val)
+	r, err := ObjectFromString(val)
 	if err != nil {
 		t.Errorf("Failed to create Json : %s", err)
 	}
@@ -65,9 +64,9 @@ func Test_0300_bool(t *testing.T) {
 	}
 }
 
-func Test_0300_Object(t *testing.T) {
+func TestObject_0300_Object(t *testing.T) {
 	val := "{\"name\":\"fkm\",\"ext\":{\"data\":\"123\"}}"
-	r, err := rawjson.ObjectFromString(val)
+	r, err := ObjectFromString(val)
 	if err != nil {
 		t.Errorf("Failed to create Json : %s", err)
 	}
@@ -81,9 +80,9 @@ func Test_0300_Object(t *testing.T) {
 	}
 }
 
-func Test_0500_Array(t *testing.T) {
+func TestObject_0500_Array(t *testing.T) {
 	val := "{\"name\":\"fkm\",\"ext\":[\"123\"]}"
-	r, err := rawjson.ObjectFromString(val)
+	r, err := ObjectFromString(val)
 	if err != nil {
 		t.Errorf("Failed to create Json : %s", err)
 	}
