@@ -19,6 +19,21 @@ func TestObject_0000_int(t *testing.T) {
 	}
 }
 
+func TestObject_0100_long(t *testing.T) {
+	val := "{\"name\":\"fkm\",\"time\":1422902874000}"
+	r, err := ObjectFromString(val)
+	if err != nil {
+		t.Errorf("Failed to create Json : %s", err)
+	}
+	v, err := r.Long("time")
+	if err != nil {
+		t.Errorf("Failed to Get Long : %s", err)
+	}
+	if v != 1422902874000 {
+		t.Errorf("Value is not %d", v)
+	}
+}
+
 func TestObject_0100_float(t *testing.T) {
 	val := "{\"name\":\"fkm\",\"rate\":4.56}"
 	r, err := ObjectFromString(val)

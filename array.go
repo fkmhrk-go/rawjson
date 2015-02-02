@@ -17,6 +17,14 @@ func (j RawJsonArray) Int(i int) (int, error) {
 	return 0, errors.New("At " + string(i) + " is not a number")
 }
 
+func (j RawJsonArray) Long(i int) (int64, error) {
+	v := j[i]
+	if val, ok := v.(float64); ok {
+		return int64(val), nil
+	}
+	return 0, errors.New("At " + string(i) + " is not a number")
+}
+
 func (j RawJsonArray) Float(i int) (float64, error) {
 	v := j[i]
 	if val, ok := v.(float64); ok {
