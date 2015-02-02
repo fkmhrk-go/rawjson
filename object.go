@@ -17,6 +17,14 @@ func (j RawJsonObject) Int(k string) (int, error) {
 	return 0, errors.New(k + " is not a number")
 }
 
+func (j RawJsonObject) Long(k string) (int64, error) {
+	v := j[k]
+	if i, ok := v.(float64); ok {
+		return int64(i), nil
+	}
+	return 0, errors.New(k + " is not a number")
+}
+
 func (j RawJsonObject) Float(k string) (float64, error) {
 	v := j[k]
 	if i, ok := v.(float64); ok {

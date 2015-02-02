@@ -19,6 +19,21 @@ func TestArray_1000_int(t *testing.T) {
 	}
 }
 
+func TestArray_1100_long(t *testing.T) {
+	val := "[1422902874000, 456]"
+	r, err := ArrayFromString(val)
+	if err != nil {
+		t.Errorf("Failed to create Json : %s", err)
+	}
+	v, err := r.Long(0)
+	if err != nil {
+		t.Errorf("Failed to Int : %s", err)
+	}
+	if v != 1422902874000 {
+		t.Errorf("Value is %d : not 1422902874000", v)
+	}
+}
+
 func TestArray_1200_float(t *testing.T) {
 	val := "[123.75, 456.78]"
 	r, err := ArrayFromString(val)
